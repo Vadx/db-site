@@ -1,7 +1,9 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import { 
-  Typography
+  Typography,
+  Container,
+  Box
 } from '@material-ui/core'
 
 const useStyles = makeStyles(theme => ({
@@ -9,15 +11,18 @@ const useStyles = makeStyles(theme => ({
     width: '100%',
     background: '#636466',
     color: '#fff',
-    padding: '20px 0'
+    paddingTop: '20px',
+    paddingBottom: '20px'
   },
 }))
 
 export function TopBar () {
   const classes = useStyles()
   return (
-    <div className={classes.root}>
-      <Typography>TopBar</Typography>
-    </div>
+    <Box className={classes.root}>
+      <Container>
+        <Typography>TopBar</Typography>
+      </Container>
+    </Box>
   )
 }

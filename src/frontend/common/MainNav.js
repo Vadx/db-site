@@ -1,6 +1,6 @@
 import React from 'react'
 import { makeStyles, withStyles } from '@material-ui/core/styles'
-import { Box, Link } from '@material-ui/core'
+import { Container, Link } from '@material-ui/core'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -22,13 +22,13 @@ const MenuItem = withStyles(theme => ({
 export function MainNav () {
   const classes = useStyles()
   return (
-    <Box className={classes.root}>
+    <Container className={classes.root}>
       <MenuItem component="button" variant="body2">Trending</MenuItem>
       <MenuItem component="button" variant="body2">Issuers</MenuItem>
       <MenuItem component="button" variant="body2">BD Sign-up</MenuItem>
       <MenuItem component="button" variant="body2">Market Data</MenuItem>
       <MenuItem component="button" variant="body2">Press</MenuItem>
       <MenuItem component="button" variant="body2">About DBOT</MenuItem>
-    </Box>
+    </Container>
   )
 }

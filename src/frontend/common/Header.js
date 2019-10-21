@@ -5,13 +5,14 @@ import Twitter from '../assets/Twitter.svg'
 import LinkedIn from '../assets/LinkedIn.svg'
 import { 
   Box,
-  Link
+  Link,
+  Container
 } from '@material-ui/core'
 
 const useStyles = makeStyles(theme => ({
   root: {
-    width: '100%',
-    padding: '40px 0'
+    paddingTop: '40px',
+    paddingBottom: '40px'
   },
   extendedIcon: {
     marginLeft: theme.spacing(2),
@@ -31,24 +32,29 @@ const useStyles = makeStyles(theme => ({
 export function Header () {
   const classes = useStyles()
   return (
-    <Box 
-      display="flex" 
-      justify="center" 
-      spacing={0}
-      alignItems="center"
-      justifyContent="space-between"
+    <Container 
+      maxWidth="lg"
       className={classes.root}
     >
-      <Logo />
+      <Box 
+        display="flex" 
+        justify="center" 
+        spacing={0}
+        alignItems="center"
+        justifyContent="space-between"
+      >
+      
+        <Logo />
 
-      <Box display="flex" alignItems="right">
-        <Link size="small" className={classes.iconWrap} href={'https://twitter.com/dbottrading'}  target={'_blank'}>
-          <img className={classes.extendedIcon} src={Twitter} alt="Twitter" />
-        </Link>
-        <Link size="small" className={classes.margin} href={'https://www.linkedin.com/company/dbottrading/'}  target={'_blank'}>
-          <img className={classes.extendedIcon} src={LinkedIn} alt="LinkedIn" />
-        </Link>
+        <Box display="flex" alignItems="right">
+          <Link size="small" className={classes.iconWrap} href={'https://twitter.com/dbottrading'}  target={'_blank'}>
+            <img className={classes.extendedIcon} src={Twitter} alt="Twitter" />
+          </Link>
+          <Link size="small" className={classes.margin} href={'https://www.linkedin.com/company/dbottrading/'}  target={'_blank'}>
+            <img className={classes.extendedIcon} src={LinkedIn} alt="LinkedIn" />
+          </Link>
+        </Box>
       </Box>
-    </Box>
+    </Container>
   )
 }

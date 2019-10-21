@@ -1,7 +1,9 @@
 import React from 'react'
-import { makeStyles } from '@material-ui/core/styles'
+import { makeStyles, withStyles } from '@material-ui/core/styles'
 import { 
-  Typography
+  Box,
+  Link,
+  Container
 } from '@material-ui/core'
 
 const useStyles = makeStyles(theme => ({
@@ -9,15 +11,45 @@ const useStyles = makeStyles(theme => ({
     width: '100%',
     background: '#636466',
     color: '#fff',
-    padding: '20px 0'
+    paddingTop: '40px',
+    paddingBottom: '40px',
+    borderTop: '1px solid #000'
   },
 }))
+
+const MenuItem = withStyles(theme => ({
+  root: {
+    textTransform: 'none',
+    margin: '0 10px',
+    color: '#fff',
+    fontSize: 15
+  }
+}))(Link)
 
 export function Footer () {
   const classes = useStyles()
   return (
-    <div className={classes.root}>
-      <Typography>© Delaware Board of Trade Inc., DBOT ATS LLC. All Rights Reserved</Typography>
-    </div>
+    <Box className={classes.root}>
+      <Container 
+        maxWidth="lg"
+      >
+        <Box
+          display="flex" 
+          justify="center" 
+          spacing={0}
+          alignItems="center"
+          justifyContent="space-between"
+        >
+          <Box fontSize={12}>© Delaware Board of Trade Inc., DBOT ATS LLC. All Rights Reserved</Box>
+          <Box>
+            <MenuItem>Privacy Policy</MenuItem>
+            <MenuItem> Contact Us</MenuItem>
+          </Box>
+          <Box>
+            Images
+          </Box>
+        </Box>
+      </Container>
+    </Box>
   )
 }
